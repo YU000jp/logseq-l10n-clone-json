@@ -1,6 +1,29 @@
 # logseq-l10n-clone-json
 
-Clone JSON files for all languages based on one translation file
+Clone JSON files for Logseq full languages based on one translation file
+
+## Logseq full Language list
+
+| English               | Local Language        |
+|-----------------------|-----------------------|
+| Afrikaans             | Afrikaans             |
+| German                | Deutsch               |
+| Spanish               | Español               |
+| French                | Français              |
+| Indonesian            | Bahasa Indonesia      |
+| Italian               | Italiano              |
+| Japanese              | 日本語                 |
+| Korean                | 한국어                 |
+| Norwegian             | Norsk                 |
+| Dutch                 | Nederlands            |
+| Polish                | Polski                |
+| Portuguese            | Português             |
+| Russian               | Русский               |
+| Slovak                | Slovenčina            |
+| Turkish               | Türkçe                |
+| Ukrainian             | Українська            |
+| Chinese Simplified    | 简体中文               |
+| Chinese Traditional   | 繁體中文               |
 
 ## Dependencies
 
