@@ -1,0 +1,18 @@
+{
+  "name": "logseq-l10n-clone-json",
+  "version": "1.0.0",
+  "description": "Clone all supported languages based on one translation file",
+  "main": "index.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "YU000jp",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "uuid": "^9.0.1"
+  }
+}
