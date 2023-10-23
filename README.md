@@ -75,3 +75,7 @@ await l10nSetup({
 
 }
 ```
+
+## Recommend
+
+1. Generate JSON file for translation > [logseq-l10n-generate-json](https://github.com/YU000jp/logseq-l10n-generate-json): Extract ' t("string") ' from the scripts in the folder and create one JSON file.
