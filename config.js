@@ -31,7 +31,14 @@ const folderPath = "D:\\Resource\\GitHub\\logseq-plugin-quickly-para-method\\src
  * The path to the source translation file.
  * @type {string}
  */
-const sourceFilePathName = "ja.json";
+const sourceFilePathName = "ja.json";// Not translated
+
+
+/**
+ * Eather "key" or "value" to translate the source file by key or value.
+ * @type {string}
+ */
+const keyOrValue = "value";
 
 /**
  * An array of target languages to translate the source file to.
@@ -66,4 +73,5 @@ module.exports = {
   folderPath,
   sourceFilePathName,
   targetLanguages,
+  keyOrValue
 };

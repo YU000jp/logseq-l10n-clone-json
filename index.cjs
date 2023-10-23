@@ -2,7 +2,7 @@ const axios = require('axios').default;
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const { sourceFilePathName, targetLanguages, folderPath, endpoint, azureKey, location } = require('./config');
+const { sourceFilePathName, targetLanguages, folderPath, endpoint, azureKey, location,keyOrValue } = require('./config');
 
 const main = async () => {
   const sourceFilePath = path.join(folderPath, sourceFilePathName);
@@ -20,9 +20,16 @@ const main = async () => {
 
     const targetJson = {};
     for (const [key, value] of Object.entries(sourceJson)) {
+
+      // Skip empty values
+      if (value === "") {
+        targetJson[key] = value;
+        continue;
+      }
+      
       //console.log(`Translating ${value}...`);
       const response = await axios.post(`${endpoint}/translate`, [{
-        'text': value
+        'text': keyOrValue === "key" ? key : value
       }], {
         headers: {
           'Ocp-Apim-Subscription-Key': azureKey,
@@ -32,20 +39,25 @@ const main = async () => {
         },
         params: {
           'api-version': '3.0',
-          'from': 'ja',
           'to': language
         },
         responseType: 'json'
       });
-
       targetJson[key] = response.data[0].translations[0].text;
       //console.log(`Translated ${key} to ${targetJson[key]}`);
     }
 
-    //format JSON
-    fs.writeFileSync(targetFilePath, JSON.stringify(targetJson, null, 2));
+    // Skip empty files
+    if (Object.keys(targetJson).length === 0) {
+      console.log(`File ${targetFilePath} is empty. Skipping translation.`);
+      continue;
+    }
+
+    // Write the translated file
+    fs.writeFileSync(targetFilePath, JSON.stringify(targetJson, null, 2), 'utf8');//format
     console.log(`File ${targetFilePath} created and translated.`);
-    //少し時間を空ける
+
+    // Wait 100ms to avoid throttling
     await new Promise(resolve => setTimeout(resolve, 100));
   }
 };
