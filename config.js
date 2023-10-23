@@ -25,13 +25,13 @@ const location = "global";
  * The folder path where the translation files are stored.
  * @type {string}
  */
-const folderPath = "here is full path to the translations folder"; // e.g. "C:/Users/username/Documents/GitHub/logseq-l10n-clone-json/translations"
+const folderPath = "D:\\Resource\\GitHub\\logseq-plugin-quickly-para-method\\src\\translations\\";
 
 /**
  * The path to the source translation file.
  * @type {string}
  */
-const sourceFilePath = path.join(folderPath, "en.json"); // en.json is the source file (base language)
+const sourceFilePathName = "ja.json";
 
 /**
  * An array of target languages to translate the source file to.
@@ -44,6 +44,7 @@ const targetLanguages = [
   "fr",
   "id",
   "it",
+  "ja",
   "ko",
   "nb-NO",
   "nl",
@@ -63,6 +64,6 @@ module.exports = {
   endpoint,
   location,
   folderPath,
-  sourceFilePath,
+  sourceFilePathName,
   targetLanguages,
 };
