@@ -33,6 +33,11 @@ const folderPath = "D:\\Resource\\GitHub\\logseq-plugin-quickly-para-method\\src
  */
 const sourceFilePathName = "ja.json";// Not translated
 
+/**
+ * Indicates whether the code is running in test mode. If true, the source file will be translated to the target language.
+ * @type {boolean}
+ */
+const testMode = false; // true or false
 
 /**
  * Eather "key" or "value" to translate the source file by key or value.
@@ -73,5 +78,6 @@ module.exports = {
   folderPath,
   sourceFilePathName,
   targetLanguages,
-  keyOrValue
+  keyOrValue,
+  testMode
 };
