@@ -71,6 +71,12 @@ const targetLanguages = [
   "zh-Hant",
 ];
 
+
+/**
+ * Indicates whether to overwrite the target file if it already exists.
+ */
+const overwrite = true;
+
 module.exports = {
   azureKey,
   endpoint,
@@ -79,5 +85,6 @@ module.exports = {
   sourceFilePathName,
   targetLanguages,
   keyOrValue,
-  testMode
+  testMode,
+  overwrite,
 };
